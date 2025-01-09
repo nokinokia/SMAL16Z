@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMAL16Z</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.jpeg">
+    <!-- Preconnect dan Font Merienda -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <!-- Link untuk Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Merienda', cursive;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+            overflow-x: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Navbar */
+        header {
+            background-color: #333;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        /* Sosmed Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: #000000;
+            font-size: 24px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ff9800;
+        }
+
+        /* Home Section */
+        #home {
+            height: 100vh;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-text {
+            font-size: 4rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        .meme-text {
+            font-size: 1.2rem;
+            color: #000000;
+            margin-top: 20px;
+            font-style: italic;
+            animation: fadeInUp 2s ease-out 0.5s forwards;
+        }
+
+        .meme-img {
+            width: 300px;
+            margin-top: 30px;
+            border-radius: 10px;
+            animation: bounceIn 2s ease-in-out infinite alternate;
+        }
+
+        /* About Section */
+        #about {
+            padding: 70px 50px;
+            background-color: #ffffff;
+            text-align: center;
+            color: #000000;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        #about img {
+            width: 250px;
+            margin-top: 30px;
+            border-radius: 10px;
+            animation: zoomIn 2s ease-in-out forwards;
+        }
+
+        /* Roadmap Section */
+        #roadmap {
+            padding: 70px 50px;
+            background-color: #000000;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        #roadmap h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #roadmap p {
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        /* Tenomic Section */
+        #tenomic {
+            padding: 70px 50px;
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+        }
+
+        #tenomic h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #tenomic p {
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        #tenomic img {
+            width: 250px;
+            margin-top: 30px;
+            border-radius: 10px;
+            animation: zoomIn 2s ease-in-out forwards;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            padding: 80px 50px;
+            background-color: #000000;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Copyable Text */
+        .copy-container {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-family: 'Merienda', cursive;
+        }
+
+        .copy-btn {
+            background-color: #ff9800;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .copy-btn:hover {
+            background-color: #ff5722;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-container {
+                flex-direction: column;
+            }
+
+            .meme-img {
+                width: 250px;
+            }
+
+            .animated-text {
+                font-size: 2.5rem;
+            }
+
+            #about h2 {
+                font-size: 2rem;
+            }
+
+            #about p {
+                font-size: 1rem;
+            }
+
+            #roadmap h2 {
+                font-size: 2rem;
+            }
+
+            #tenomic h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#roadmap">HOW TO BUY</a></li>
+                <li><a href="#tenomic">TOKENOMICS</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section id="home">
+        <div class="content">
+            <h1 class="animated-text">SMAL16Z</h1>
+            <img src="img/logo.jpeg" alt="Meme Image" class="meme-img">
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="content">
+            <h2>About SMAL16Z</h2>
+            <p>Smal16z is a vibrant and creative concept that blends minimalism with a modern aesthetic. The name itself
+                suggests something compact, innovative, and forward-thinking, making it an excellent choice for projects
+                or brands that prioritize simplicity without compromising on impact.
+            </p>
+            <img src="img/1.jpeg" alt="Meme Image">
+        </div>
+    </section>
+
+    <section id="roadmap">
+        <div class="content">
+            <h2>HOW TO BUY</h2>
+            <p>1. Download Phantom Wallet</p>
+            <p>2. Buy Solana On Your CEX</p>
+            <p>3. Trade On Pump.fun</p>
+        </div>
+    </section>
+
+    <section id="tenomic">
+        <div class="content">
+            <h2>TOKENOMICS</h2>
+            <p>TICKER = $SMAL16Z</p>
+            <p>TOTAL SUPPLY = 1,000,000,000</p>
+            <p>LIQUIDITY POOL BURNED = 100%</p>
+            <p>TAXES = 0%</p>
+            <img src="img/2.jpeg" alt="Tenomic">
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="content">
+            <h2>Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item"><img src="img/1.jpeg" alt="Meme"></div>
+                <div class="gallery-item"><img src="img/2.jpeg" alt="Meme"></div>
+                <div class="gallery-item"><img src="img/3.jpeg" alt="Meme"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyable Text Section -->
+    <div class="copy-container">
+        <p>CA: XXXXXXXXXXXXXXXXXXXXXX</p>
+        <button class="copy-btn" onclick="copyText()">COPY CA</button>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://x.com/noctyxdev"><img
+                    src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png"
+                    width="50px"></a>
+            <a href="https://t.me/noctyxsol"><img
+                    src="https://logodownload.org/wp-content/uploads/2017/11/telegram-logo-8.png" width="50px"></a>
+            <a href="#"><img
+                    src="https://static.vecteezy.com/system/resources/previews/021/819/342/non_2x/fun-green-pill-free-png.png"
+                    width="50px"></a>
+        </div>
+        <p>&copy; 2025 $SMAL16Z. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function copyText() {
+            const text = "xxxxxxxxxxxxxxxxxxxxxxxxxx";
+            navigator.clipboard.writeText(text).then(function () {
+                alert("Text copied to clipboard!");
+            }, function () {
+                alert("Failed to copy text.");
+            });
+        }
+    </script>
+</body>
+
+</html>
